@@ -13,7 +13,7 @@ public class Tarefa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank(message = "O titulo é obrigatorio")
-    @Size(min = 0, max = 100, message = "O titulo deve ter entre 3 a 100 caracteres")
+    @Size(min = 3, max = 100, message = "O titulo deve ter entre 3 a 100 caracteres")
     private String titulo;
     private boolean concluida;
 
