@@ -1,5 +1,6 @@
 package com.henrique.gerenciador_tarefas.service;
 
+import com.henrique.gerenciador_tarefas.exception.TarefaNaoEncontradaException;
 import com.henrique.gerenciador_tarefas.model.Tarefa;
 import com.henrique.gerenciador_tarefas.repository.TarefaRepository;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class TarefaService {
     }
 
     public Tarefa buscarPorId(Long id) {
-        return repository.findById(id).orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
+        return repository.findById(id).orElseThrow(() -> new TarefaNaoEncontradaException(id));
     }
 
     public Tarefa criar(Tarefa tarefa) {
