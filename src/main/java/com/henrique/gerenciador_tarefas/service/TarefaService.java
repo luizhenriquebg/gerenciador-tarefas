@@ -37,4 +37,10 @@ public class TarefaService {
         tarefa.setConcluida(true);
         return repository.save(tarefa);
     }
+
+    public Tarefa atualizar(Long id, String novoTitulo) {
+        Tarefa tarefa = buscarPorId(id);
+        tarefa.setTitulo(novoTitulo);
+        return repository.save(tarefa);
+    }
 }

@@ -41,4 +41,9 @@ public class TarefaController {
     public Tarefa concluir(@PathVariable Long id) {
         return service.concluir(id);
     }
+
+    @PutMapping("/{id}")
+    public Tarefa atualizar(@PathVariable Long id,@Valid @RequestBody Tarefa tarefa) {
+        return service.atualizar(id, tarefa.getTitulo());
+    }
 }
