@@ -43,4 +43,8 @@ public class TarefaService {
         tarefa.setTitulo(novoTitulo);
         return repository.save(tarefa);
     }
+
+    public List<Tarefa> listarConcluidas() {
+        return repository.findByConcluida(true);
+    }
 }
